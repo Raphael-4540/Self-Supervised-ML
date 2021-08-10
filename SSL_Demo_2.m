@@ -98,7 +98,7 @@ I_pair(:,:,2) = moving;
 [BW_OF_pair(:,:,1), mag] = OpticalFlowSegmentation(I_pair,th,MinPixelsInConnectedRegion,SizeOfSmoothingDisk);
 
 k =1;
-SegFig_OF = figure; 
+%SegFig_OF = figure; 
 stats_OF = regionprops('table',BW_OF_pair(:,:,k),'Area','Centroid');
 Area_OF{k} = stats_OF.Area;
 
@@ -106,18 +106,18 @@ B_OF = bwboundaries(BW_OF_pair(:,:,k));
 NF_OF = length(B_OF);
     
 % Display. 
-imshow(imadjust(I(:,:,2))); colormap bone; hold on;
-for i = 1:length(B_OF)
-    bdd_OF = B_OF{i};
-    plot(bdd_OF(:,2), bdd_OF(:,1), 'r', 'LineWidth', 1)
-end
-centroid = stats_OF.Centroid;
+%imshow(imadjust(I(:,:,2))); colormap bone; hold on;
+%for i = 1:length(B_OF)
+%    bdd_OF = B_OF{i};
+%    plot(bdd_OF(:,2), bdd_OF(:,1), 'r', 'LineWidth', 1)
+%end
+%centroid = stats_OF.Centroid;
 
-if ~isempty(centroid)
-    scatter(centroid(:,1),centroid(:,2),'r+')
-end
-axis equal; title(['OF Initialize: Use for Estimating Minimum Cell Size']);   
-pause(0.01); hold off;
+%if ~isempty(centroid)
+%    scatter(centroid(:,1),centroid(:,2),'r+')
+%end
+%axis equal; title(['OF Initialize: Use for Estimating Minimum Cell Size']);   
+%pause(0.01); hold off;
 
 if isnan(mean(Area_OF{1,1})) == 1 % In case no cells are segmented
     MinPixelsInConnectedRegion = 550;  
@@ -143,8 +143,8 @@ for k = 2:NumOfFrames % Select a frame.
     
     % Compute optical flow for background and cell labeling by
     % self-supervising with image entropy
-    formatSpec = 'Self Tuning Thresholds for Training Data Generation';
-    str = sprintf(formatSpec)
+    %formatSpec = 'Self Tuning Thresholds for Training Data Generation';
+    %str = sprintf(formatSpec)
     [bg_train, cell_train] = SS_Training_Data(I_pair,MinPixelsInConnectedRegion, S_nhood, extra_S);
     
     % Create OF generated BW training masks for subsequent feature vector training data
