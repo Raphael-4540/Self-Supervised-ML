@@ -1,6 +1,9 @@
 # Self-Supervised-ML
 Self supervised machine learning code for segmenting live cell imagery (Matlab)
 
+SSL_Demo_2.m : main program for self supervised machine learning segmentation
+SSL_Declumping_2.m : main program for declumping application (applied to output of SSL_Demo_2.m)
+
 This Matlab code is designed to be used with time-resolved live cell microscopy images (tiffs) for the automated segmentation of cells from background. 
 
 The principle of self-supervised machine learning is that you simply load your images and hit Run - no parameter tuning needed, no training imagery required.  
