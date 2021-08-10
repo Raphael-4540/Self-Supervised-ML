@@ -17,7 +17,7 @@ while bg_train_S_total <= 1e5
 	% Use the OF mag() images to mask original tiff and create training
     % data for the background
     bg_train_entr = (double(logical(bg_mag))).*train_img_entropy; % OF segmented background (raw image)
-    bg_train_S_total = sum(sum(bg_train_entr))
+    bg_train_S_total = sum(sum(bg_train_entr));
     if bg_th_init > 0.002
         break;
     end
@@ -33,7 +33,7 @@ cell_th_init = 0.04;
 while cell_train_S_total <= S_total_th 
     
     if cell_th_init <= 0 % If this has gone negative a significant amount of entropy has not been found
-        cell_th_init = 0.00002 % default th = 0.00002: Try and find something to train on.
+        cell_th_init = 0.00002; % default th = 0.00002: Try and find something to train on.
         [BW_high_th(:,:,1), mag] = OpticalFlowSegmentation(I_pair,cell_th_init,MinPixelsInConnectedRegion,SizeOfSmoothingDisk);
         cell_mag = BW_high_th(:,:,1).*mag; 
         cell_train_entr = (double(logical(cell_mag))).*train_img_entropy;
@@ -44,13 +44,13 @@ while cell_train_S_total <= S_total_th
     cell_mag = BW_high_th(:,:,1).*mag; % show cells
     if (i==1)
         cell_train_entr = (double(logical(cell_mag))).*train_img_entropy; 
-        cell_train_S_total = sum(sum(cell_train_entr)) 
+        cell_train_S_total = sum(sum(cell_train_entr));
         S_total_th = cell_train_S_total + extra_S; 
     else
         cell_train_entr = (double(logical(cell_mag))).*train_img_entropy; % OF segmented background (raw image)
-        cell_train_S_total = sum(sum(cell_train_entr))
+        cell_train_S_total = sum(sum(cell_train_entr));
     end
-    cell_th_init = cell_th_init - 2e-3
+    cell_th_init = cell_th_init - 2e-3;
     i = i + 1;
 end
 
