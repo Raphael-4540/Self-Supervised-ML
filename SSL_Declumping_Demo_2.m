@@ -24,7 +24,7 @@
 % Note: the current code ignores cells touching the boundary. See
 % SSL_Demo_2 comments for instrunctions on how to include.
 %
-% As such, it requires the following inputs:
+% As such, it requires the following inputs of inputs in Sections 1 and 2:
 % 1) That the nuclei mask be the same size (i.e. resolution) as the raw
 % time-lapse imagery used for the SSL mask.
 % 2) The nuclei mask be stored as a binary tiff
@@ -39,9 +39,10 @@
 % Start fresh
 clear; close all; clc; 
 
+% USER INPUT REQUIRED!!
 % Choose directory of the two images that were used by SSL to create cell
-% masks. e.g.:
-% dir_str = 'C:\Users\Marc\Desktop\Figure5ab_SSL_Imagery\Figure5ab_SSL_Imagery'
+% masks. e.g.: dir_str = 'C:\Users\Marc\Desktop\Figure5ab_SSL_Imagery\Figure5ab_SSL_Imagery'
+dir_str = 'C:\Users\Marc\Desktop\Figure5ab_SSL_Imagery\Figure5ab_SSL_Imagery'
 
 % Read in data
 I = ReadDataCube(dir_str);
@@ -51,6 +52,7 @@ I_pair(:,:,2) = I(:,:,2);
 
 %% 2. Load SSL *.mat cell mask file and read nuclei mask file
 %
+% % USER INPUT REQUIRED!!
 % In this section you will need to place files in your current
 % MATLAB directory and change the hardcoded names in the 'load' and
 % 'imread' commands
