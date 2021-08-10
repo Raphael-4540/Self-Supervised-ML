@@ -54,9 +54,11 @@
 clear; clc;
 close all;
 
+% USER INPUT REQUIRED!!
 % Select data source. ONLY files to be analyzed of data type TIFF should be
-% in this folder. e.g.:
-% dir_str = 'C:\Users\Marc\Desktop\Fig3a_pair\Fig3a_pair'
+% in this folder. e.g.: dir_str = 'C:\Users\Marc\Desktop\Fig3a_pair\Fig3a_pair'
+dir_str = 'C:\Users\Marc\Desktop\Fig3a_pair\Fig3a_pair'
+
 %% Part 1: Decide which static feature vectors to generate 
 
 entr = true; % This should always be true. Entropy is currently a required feature vector
