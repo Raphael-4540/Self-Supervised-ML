@@ -45,7 +45,10 @@
 %   OpticalFlowSegmentation(): used to automate size filtering (Part 3)
 %   SS_Training_Data(): uses entropy to determine a
 %       reasonable optical flow threshold for labeling (Part 4). 
-%
+%   Bayes_S_trainClassifier(): Naive Bayes classifier for entropy feature
+%       vector only.
+%   Bayes_S_G_trainClassifier(): Naive Bayes classifier for entropy and
+%       gradient feature vectors.
 %
 % Start fresh
 clear; clc;
