@@ -88,6 +88,9 @@ for i = 1:length(B_nucleus)
   plot(bdd_nucleus(:,2), bdd_nucleus(:,1), 'r', 'LineWidth', 1)
 end
 
+title(['Nuclei - red ; SSL Segmented Cell Clumps - blue']);   
+pause(0.01); hold off;
+
 %% 4. Declumping 
 
 % Rename these arrays.
@@ -127,8 +130,8 @@ for i=1:n_Lnc
     Lb_idx(i) = max(unique(select));
 end
 Lnc_idx = (1:n_Lnc)';
-disp('Map Nucleus labels to OF labels')
-[ Lnc_idx  Lb_idx ]
+%disp('Map Nucleus labels to OF labels')
+%[ Lnc_idx  Lb_idx ]
 
 % Create a cell array for each 'Lb' region showing the constituent 'Ln'
 % regions within it.
@@ -156,8 +159,8 @@ for i=1:n_Lb
     unclaimed_pixels{i} = [Xvec(unclaimed_pixels_idx(:)) Yvec(unclaimed_pixels_idx(:))];
     [unclaimed_pixels_cnts(i),~] = size(unclaimed_pixels{i});
 end
-disp('     OF Label   # of unclaimed pixels  # of Nucl Labels  ');
-[ (1:n_Lb)' unclaimed_pixels_cnts LnInLb_cnts ]
+%disp('     OF Label   # of unclaimed pixels  # of Nucl Labels  ');
+%[ (1:n_Lb)' unclaimed_pixels_cnts LnInLb_cnts ]
 
 % Assign a nucleus label to each unclaimed pixel.
 unclaimed_pixel_label = cell(n_Lb,1);
@@ -271,6 +274,9 @@ for k = 1:n_Lnc
   bdd = BL{k};
   plot(bdd(:,2), bdd(:,1), 'b', 'LineWidth', 1)
 end
+
+title(['Declumped Cell Results']);   
+pause(0.01); hold off;
 
 % Plot nucleus boundaries
 % for i = 1:length(B_nucleus)
