@@ -278,19 +278,6 @@ end
 %   plot(bdd_nucleus(:,2), bdd_nucleus(:,1), 'r', 'LineWidth', 1)
 % end
 
-%% 5. Assign "misfit" regions to correct nucleus label.
-% Not necessary to run in most cases
-
-% Find boundaries of "misfit" regions.
-[bdd,lbl] = bwboundaries(L_misfits_total);
-%figure; imagesc(L_misfits_total); colormap('gray'); colorbar; axis square;
-%title(['Misfit Regions: n=' num2str(size(bdd,1))])
-
-% Label "misfit" regions to nearest labelled region.
-% strel = 
-% imdilate(L_misfits_total,strel)
-
-
 
 
 
