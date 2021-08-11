@@ -130,6 +130,8 @@ end
 % Classification
 label = {'background', 'cell'};
 
+disp(['Entering self-supervised learning and classifier processing Loop...'])
+
 tic
 extra_S = 4e3; % Camera dependent: 4e3 works well for sensors sizes of 2 Mpixel or more.
 for k = 2:NumOfFrames % Select a frame.
@@ -257,7 +259,7 @@ for k = 2:NumOfFrames % Select a frame.
     
     % Build the binary output images matrix (first image will be blank)
     BW_cube_fv(:,:,k) = pre_BW_cube; 
-    k
+    disp([ 'Frame '   num2str(k) ' done.' ]) %k
 end
 toc
 
@@ -324,14 +326,13 @@ for k=2:NumOfFrames
     
     F(k) = getframe(gcf);
     writeVideo(v,F(k)); % Saved to folder one level above tiff file folder
-    close(SegFig);
+%   close(SegFig); % Uncomment if overwhelmed with figures!
 end
 close(v);
 %% Part 6: Save segmentation results in the form of binary images (.mat file) to folder one level above tiff file folder
 
-%save('Declumping_Fig5ab_SSL_output.mat', 'BW_cube_fv');
 file_out_name_mat = strcat(file_out_name,'_cell_mask','.mat');
 save([dir_str(1:idx(size(idx,2))) file_out_name_mat], 'BW_cube_fv');
-formatSpec = 'Video and segmentation mask output files saved to the following folder: ';
-str = sprintf(formatSpec)
+disp([' '])
+disp(['Video and segmentation mask output files saved to the following folder: '])
 v.Path
