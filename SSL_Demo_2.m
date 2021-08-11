@@ -37,8 +37,7 @@
 % Output: 
 %   (1) BW_cube_fv(): Binary images in which segemented cell pixels are
 %       ones and segmented background pixels are zeroes.
-%   (2) params{}: Table of cell morphological features for each time point
-%   (3) Video of segmented imagery (.avi)
+%   (2) Video of segmented imagery (.avi)
 %
 % Functions called:
 %   ReadDataCube(): used to read in tiff files into a 3D matrix
@@ -271,7 +270,7 @@ idx = strfind(dir_str, filesep);
 file_out_name = dir_str(idx(1, size(idx,2))+1:end);
 % Video
 file_out_name_v = strcat(file_out_name,'.avi');
-v = VideoWriter([dir_str(1:idx(size(idx,2))) file_out_name_v])
+v = VideoWriter([dir_str(1:idx(size(idx,2))) file_out_name_v]);
 v.FrameRate = 2;
 open(v);
 
@@ -333,3 +332,6 @@ close(v);
 %save('Declumping_Fig5ab_SSL_output.mat', 'BW_cube_fv');
 file_out_name_mat = strcat(file_out_name,'_cell_mask','.mat');
 save([dir_str(1:idx(size(idx,2))) file_out_name_mat], 'BW_cube_fv');
+formatSpec = 'Video and segmentation mask output files saved to the following folder: ';
+str = sprintf(formatSpec)
+v.Path
