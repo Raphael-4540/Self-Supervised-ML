@@ -7,6 +7,8 @@ SSL_Declumping_2.m : main program for declumping application (applied to output 
 
 For convenience this code has been grouped with the accompanying Demo data for download from the following website:
 
+https://zenodo.org/record/5193696#.YRZU9IhKhPY
+
 If you prefer to work with the code in the GitHub environment and combine with data from Zenodo, please proceed as follows:
 
 1. Download the demo data set from Zenodo: 
