@@ -7,6 +7,11 @@ SSL_Declumping_2.m : main program for declumping application (applied to output 
 
 This Matlab code is designed to be used with time-resolved live cell microscopy images (tiffs) for the automated segmentation of cells from background. 
 
+It is recommended you first run this code with its accompanying demo data:
+1. Download the demo data set zip file here: 
+2. Combine the folders in the demo data zip with this GitHub code as shown in the "Code_Data_Directory_Structure_Image.JPG" image
+3. Open SSL_Demo_2.m or SSL_Declumping_2.m in Matlab and hit Run. 
+
 The principle of self-supervised machine learning is that you simply load your images and hit Run - no parameter tuning needed, no training imagery required.  
 
 Run from start to finish, the code uses consecutive pairs of images to generate training data of 'cells' and 'background' via dynamic feature vectors 
