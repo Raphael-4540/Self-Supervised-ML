@@ -5,11 +5,11 @@ SSL_Demo_2.m : main program for self supervised machine learning segmentation
 
 SSL_Declumping_2.m : main program for declumping application (applied to output of SSL_Demo_2.m)
 
-For convenience this code has been grouped with the accompanying Demo data for download from the following website:
+For convenience and ease of use this code has been grouped with the accompanying Demo data for download from the following website:
 
 https://zenodo.org/record/5193696#.YRZU9IhKhPY
 
-If you prefer to work with the code in the GitHub environment and combine with data from Zenodo, please proceed as follows:
+However, if you prefer to work with the code in the GitHub environment and combine with data from Zenodo, please proceed as follows:
 
 1. Download the demo data set from Zenodo: 
 2. Combine the data folders with this GitHub code as shown in the "Code_Data_Directory_Structure_Image.JPG" image
