@@ -24,13 +24,7 @@ transmitted light, DIC, phase contrast, fluorescence and interference reflection
 
 Six different cell lines were imaged to cover a range of morphologies and phenotypic dynamics using three cameras of differing resolutions.  
 
-These test data sets can be downloaded here: 
-https://zenodo.org/record/5167318#.YQ_R2ohKhPY
-
 The associated manuscript for this work can be found here (although the latest version is under peer review as of this writing):
 https://www.biorxiv.org/content/10.1101/2021.01.07.425773v1 
 
 This code was tested on Matlab v2020a and v2021a using commercially available laptop computers running the Windows 10 operating system.
-
-The segmented output files can be used for higher level applications such as cell tracking and declumping.
-Also included in this package is a higher level declumping application.  
